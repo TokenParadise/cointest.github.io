@@ -275,7 +275,6 @@ body {
 
 // copy paste button
 
-$bg: #a3fcff;
 $container: #41484b;
 $icon: white;
 
@@ -291,19 +290,14 @@ $icon: white;
 
 @mixin pos-center {
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   margin: auto;
 }
 
-body {
-  width: 100%;
-  height: 100%;
-  margin: 4%;
-  overflow: hidden;
-  background: $bg;
-}
-
-.container {
+.containerBox {
   @include flex-center;
   @include pos-center;
   width: 92%;
@@ -313,10 +307,10 @@ body {
   background: $container;
   border-radius: 10px;
   box-shadow: rgba(black, 0.25) 0 16px 36px;
-  transform: translate3d(0,0,0);
+  transform: translate3d(0, 0, 0);
 }
 
-.container > button {
+.containerBox > button {
   position: relative;
   display: block;
   width: 40%;
@@ -334,83 +328,18 @@ body {
   }
 }
 
-
-// Cut!
-.cut {
-  &:before {
-    content: "";
-    @include pos-center;
-    width: 2px;
-    height: 2px;
-    background: $container;
-    z-index: 2;
-    border-radius: 100%;
-  }
-  &.is-active {
-    .top {
-      animation: cut-top 0.8s ease-out;
-    }
-    .bottom {
-      animation: cut-bottom 0.8s ease-out; 
-    }
-  }
-  .top,
-  .bottom {
-    display: block;
-    width: 42px;
-    height: 6px;
-    background: $icon;
-    &:before {
-      content: "";
-      position: absolute;
-      top: -5px;
-      left: -5px;
-      width: 8px;
-      height: 8px;
-      background: $container;
-      border: 4px solid $icon;
-      border-radius: 100%;
-    }
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: -4px;
-      width: 8px;
-      height: 6px;
-      background: $icon;
-      border-radius: 1px;
-    }
-  }
-  .top {
-    transform: rotate(45deg)
-      translateZ(0);
-    box-shadow: $container 0 -2px 0 1px;
-    z-index: 1;
-    &:after {
-      transform: skewX(-45deg);
-    }
-  }
-  .bottom {
-    transform: rotate(-45deg)
-      translateZ(0);
-    &:after {
-      transform: skewX(45deg);
-    }
-  }
-}
-
 // Copy!
 .copy {
   &.is-active {
     .bottom {
-      animation: copy 0.8s ease-out; 
+      animation: copy 0.8s ease-out;
     }
   }
   .top,
   .bottom {
     background: $container;
-    top: -10px; left: -12px;
+    top: -10px;
+    left: -12px;
   }
   .top {
     width: 29px;
@@ -424,40 +353,7 @@ body {
     height: 38px;
     border: 4px solid $icon;
     border-radius: 4px;
-    transform: translate(9px,10px);
-  }
-}
-
-// Delete!
-.delete {
-  &.is-active {
-    .top {
-      animation: delete 0.8s ease-out;
-    }
-  }
-  .top {
-    @include pos-center;
-    top: -31px;
-    width: 30px;
-    height: 4px;
-    background: $icon;
-    z-index: 1;
-    &:before {
-      content: "";
-      @include pos-center;
-      top: -2px;
-      width: 18px;
-      height: 6px;
-      background: $icon;
-      border-radius: 8px;
-    }
-  }
-  .bottom {
-    top: 8px;
-    width: 26px;
-    height: 30px;
-    background: $icon;
-    border-radius: 0 0 6px 6px;
+    transform: translate(9px, 10px);
   }
 }
 
@@ -492,10 +388,12 @@ body {
       border-radius: 100%;
     }
     &:before {
-      top: -28px; left: 26px;
+      top: -28px;
+      left: 26px;
     }
     &:after {
-      bottom: -28px; left: 26px;
+      bottom: -28px;
+      left: 26px;
     }
   }
   .line {
@@ -523,123 +421,47 @@ body {
   }
 }
 
-// Cut!
-@keyframes cut-top {
-  0% {
-    transform: rotate(45deg)
-      translateZ(0);
-  }
-  20% {
-    transform: rotate(25deg)
-      translateZ(0);
-  }
-  40% {
-    transform: rotate(45deg)
-      translateZ(0);
-  }
-  60% {
-    transform: rotate(25deg)
-      translateZ(0);
-  }
-  100% {
-    transform: rotate(45deg)
-      translateZ(0);
-  }
-}
-@keyframes cut-bottom {
-  0% {
-    transform: rotate(-45deg);
-  }
-  20% {
-    transform: rotate(-25deg);
-  }
-  40% {
-    transform: rotate(-45deg);
-  }
-  60% {
-    transform: rotate(-25deg);
-  }
-  100% {
-    transform: rotate(-45deg);
-  }
-}
-
 // Copy!
 @keyframes copy {
   0% {
-    transform: translate(0,0);
+    transform: translate(0, 0);
   }
   100% {
-    transform: translate(9px,10px);
-  }
-}
-
-// Delete!
-@keyframes delete {
-  0% {
-    transform: rotate(0)
-      translateY(0);
-  }
-  20% {
-    transform: rotate(0)
-      translateY(-4px);
-  }
-  30% {
-    transform: rotate(20deg)
-      translateY(-4px);
-  }
-  40% {
-    transform: rotate(-20deg)
-      translateY(-4px);
-  }
-  50% {
-    transform: rotate(20deg)
-      translateY(-4px);
-  }
-  60% {
-    transform: rotate(-10deg)
-      translateY(-4px);
-  }
-  70% {
-    transform: rotate(10deg)
-      translateY(-4px);
-  }
-  80% {
-    transform: rotate(0)
-      translateY(-4px);
-  }
-  100% {
-    transform: rotate(0)
-      translateY(0);
+    transform: translate(9px, 10px);
   }
 }
 
 // Share!
 @keyframes share-top {
   0% {
-    transform: translate(100%,0);
+    transform: translate(100%, 0);
   }
-  40%, 41% {
-    transform: translate(-100%,0);
+  40%,
+  41% {
+    transform: translate(-100%, 0);
   }
   41% {
-    transform: translate(100%,0);
+    transform: translate(100%, 0);
   }
-  80%, 100% {
-    transform: translate(-100%,0);
+  80%,
+  100% {
+    transform: translate(-100%, 0);
   }
 }
 @keyframes share-bottom {
-  0%, 10% {
-    transform: translate(-100%,0);
+  0%,
+  10% {
+    transform: translate(-100%, 0);
   }
-  50%, 51% {
-    transform: translate(100%,0);
+  50%,
+  51% {
+    transform: translate(100%, 0);
   }
   51% {
-    transform: translate(-100%,0);
+    transform: translate(-100%, 0);
   }
-  90%, 100% {
-    transform: translate(100%,0);
+  90%,
+  100% {
+    transform: translate(100%, 0);
   }
 }
