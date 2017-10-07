@@ -275,12 +275,8 @@ body {
 
 // copy paste button
 
-$container: #41484b;
-$icon: white;
-
-* {
-  box-sizing: border-box;
-}
+$container: white ;
+$icon: #41484b;
 
 @mixin flex-center {
   display: flex;
@@ -289,7 +285,7 @@ $icon: white;
 }
 
 @mixin pos-center {
-  position: absolute;
+  // position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
@@ -306,7 +302,7 @@ $icon: white;
   padding: 0 10px;
   background: $container;
   border-radius: 10px;
-  box-shadow: rgba(black, 0.25) 0 16px 36px;
+  // box-shadow: rgba(black, 0.25) 0 16px 36px;
   transform: translate3d(0, 0, 0);
 }
 
@@ -338,8 +334,8 @@ $icon: white;
   .top,
   .bottom {
     background: $container;
-    top: -10px;
-    left: -12px;
+    top: -8px;
+    left: 6px;
   }
   .top {
     width: 29px;
@@ -347,6 +343,7 @@ $icon: white;
     border-top: 4px solid $icon;
     border-left: 4px solid $icon;
     border-radius: 4px 0;
+    position: absolute;
   }
   .bottom {
     width: 32px;
@@ -372,6 +369,7 @@ $icon: white;
     }
   }
   .circles {
+    position: absolute;
     @include pos-center;
     right: 26px;
     width: 12px;
@@ -388,19 +386,22 @@ $icon: white;
       border-radius: 100%;
     }
     &:before {
+      position: absolute;
       top: -28px;
       left: 26px;
     }
     &:after {
+      position: absolute;
       bottom: -28px;
       left: 26px;
     }
   }
   .line {
+    position: absolute;
     @include pos-center;
     width: 36px;
     height: 3px;
-    background: transparent;
+    background: $icon;
     overflow: hidden;
     &:nth-child(2) {
       bottom: 14px;
@@ -464,4 +465,12 @@ $icon: white;
   100% {
     transform: translate(100%, 0);
   }
+}
+
+.fullCol{
+  border: 1px dashed $icon;
+  text-align:center;
+  padding: 30px 0 0 0;
+  border-radius: 30px;
+  color: $icon;
 }

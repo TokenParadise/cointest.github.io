@@ -1,8 +1,10 @@
 # Site settings
 title: Bubble Token
 description: Yet another speculative token
-baseurl: "/cointest.github.io" # the subpath of your site, e.g. /blog
-url: "https://tokenparadise.github.io" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
+#baseurl: "/cointest.github.io" 
+#url: "https://tokenparadise.github.io" 
+baseurl: 
+url: http://localhost:3000
 
 # User settings
 username: Bubble Token
