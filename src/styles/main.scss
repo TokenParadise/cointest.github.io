@@ -2,6 +2,8 @@ $main: #1a222c;
 $sec: #4B5664;
 $purple: #54516A;
 $cut: 768px;
+$container: white ;
+$icon: #41484b;
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
@@ -94,16 +96,16 @@ body {
     line-height: 1;
     margin: 5px 0 10px 0;
     @media only screen and (min-width:$cut){
-      font-size: 40px;
+      font-size: 29px;
     }
   }
   .link {
-    color: #FFF;
+    color: #b74a2d;
     display: inline-flex;
     justify-content: space-between;
     text-decoration: none;
     font-size: 15px;
-    margin: 10px;
+    margin: 0 10px 10px 10px;
     @media only screen and (min-width:$cut){
       font-size: 20px;
     }
@@ -191,6 +193,14 @@ body {
   margin: 10px auto;
 }
 
+.borderdashed{
+  border-bottom: 1px dashed $icon;
+  border-radius: 30px;
+  padding: 20px;
+  color: $icon;
+  text-align: center;
+}
+
 .user-projects {
   margin: 40px auto;
   img {
@@ -217,7 +227,7 @@ body {
 }
 
 .project-link {
-  display: block;
+  // display: block;
   width: 100px;
   margin: 10px 0px;
   padding: 5px;
@@ -275,8 +285,6 @@ body {
 
 // copy paste button
 
-$container: white ;
-$icon: #41484b;
 
 @mixin flex-center {
   display: flex;
