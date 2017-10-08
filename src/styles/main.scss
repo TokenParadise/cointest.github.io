@@ -475,6 +475,27 @@ body {
   }
 }
 
+// progress bar
+// @import "compass/css3";
+
+.progress {
+  width: 100%;
+  height: 50px;
+}
+
+.progress-wrap {
+  background: #449b3e;
+  margin: 20px 0;
+  overflow: hidden;
+  position: relative;
+  .progress-bar {
+    background: #aaa;
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
+}
+
 .fullCol{
   border: 1px dashed $icon;
   text-align:center;
@@ -482,3 +503,23 @@ body {
   border-radius: 30px;
   color: $icon;
 }
+
+#progressDiv{
+  text-align: center;
+  margin: 0 0 100px 0;
+  color: $icon;
+    .endProgress{
+      float: right;
+      border-right: 1px solid $icon;
+      padding: 10px;
+      margin: -10px 0 0 0;
+    }
+    .startProgress{
+      float: left;
+      border-left: 1px solid $icon;
+      padding: 10px;
+      margin: -10px 0 0 0;
+    }
+}
+
+

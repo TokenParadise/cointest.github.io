@@ -1,10 +1,10 @@
 # Site settings
 title: SPECUMANIA
 description: THE SPECULATIVE TOKEN
-baseurl: "/cointest.github.io" 
-url: "https://tokenparadise.github.io" 
-#baseurl: 
-#url: http://localhost:3000
+#baseurl: "/cointest.github.io" 
+#url: "https://tokenparadise.github.io" 
+baseurl: 
+url: http://localhost:3000
 
 # User settings
 username: SPCMN
